@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-obs-white: #FFFFFF;
+  --color-obs-yellow: #F9BF0E;
+  --color-obs-dark: #101F40;
+  --color-obs-accent: #1e293b;
+
+  /* JAM Design System Colors */
+  --color-jam-blue-text: #101F40;
+  --color-jam-blue-light: #163A81;
+  --color-jam-light-blue: #DBE9F5;
+  --color-jam-light-yellow: #FFE87A;
+  --color-jam-teal: #467886;
+  --color-jam-mint: #B7E1CD;
+  --color-jam-green: #B3E5A1;
+
+  --animate-spin-slow: spin 12s linear infinite;
+  --font-sans: "Montserrat", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-obs-dark text-obs-white font-sans antialiased overflow-hidden;
+  }
+}
+
+.slide-transition {
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card {
+  @apply bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl;
+}
+
+/* Typography Standards */
+.slide-title {
+  @apply text-5xl font-black text-obs-yellow leading-tight mb-8 text-center drop-shadow-lg;
+}
+
+.slide-subtitle {
+  @apply text-2xl text-obs-white/80 font-medium tracking-wide mb-4;
+}
+
+.slide-body {
+  @apply text-xl text-obs-white/90 leading-relaxed;
+}
+
+@keyframes pulse-subtle {
+
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 4s ease-in-out infinite;
+}
