@@ -19,6 +19,21 @@ import Slide6b_AWSNativeWorkflow from './slides/Slide6b_AWSNativeWorkflow';
 import Slide6c_AWSManagedOSS from './slides/Slide6c_AWSManagedOSS';
 import Slide6d_ThirdPartySaaS from './slides/Slide6d_ThirdPartySaaS';
 import Slide6e_Security from './slides/Slide6e_Security';
+import Slide6f_AWSCoverageMap from './slides/Slide6f_AWSCoverageMap';
+import Slide6g_AWSArchitectureReference from './slides/Slide6g_AWSArchitectureReference';
+import Slide6h_DecisionMatrix from './slides/Slide6h_DecisionMatrix';
+import Slide6i_MigrationPath from './slides/Slide6i_MigrationPath';
+import Slide6j_OperationalBurden from './slides/Slide6j_OperationalBurden';
+import Slide6k_ComplianceAudit from './slides/Slide6k_ComplianceAudit';
+import Slide6l_DataResidency from './slides/Slide6l_DataResidency';
+import Slide6m_FinOps from './slides/Slide6m_FinOps';
+import Slide6n_IncidentAutomation from './slides/Slide6n_IncidentAutomation';
+import Slide6o_InstrumentationReadiness from './slides/Slide6o_InstrumentationReadiness';
+import Slide6p_ServiceOwnership from './slides/Slide6p_ServiceOwnership';
+import Slide6q_ManagedServicesTiers from './slides/Slide6q_ManagedServicesTiers';
+import Slide6r_VendorSprawl from './slides/Slide6r_VendorSprawl';
+import Slide6s_SuccessBlueprint from './slides/Slide6s_SuccessBlueprint';
+import Slide6t_MaturityModel from './slides/Slide6t_MaturityModel';
 
 import Slide7_TCO from './slides/Slide7_TCO';
 import Slide7a_TCODeepDive from './slides/Slide7a_TCODeepDive';
@@ -50,6 +65,21 @@ const slides = [
   { id: 11, content: <Slide6c_AWSManagedOSS /> },
   { id: 12, content: <Slide6d_ThirdPartySaaS /> },
   { id: 12.1, content: <Slide6e_Security /> }, // Nice to have
+  { id: 12.2, content: <Slide6f_AWSCoverageMap /> },
+  { id: 12.3, content: <Slide6g_AWSArchitectureReference /> },
+  { id: 12.4, content: <Slide6h_DecisionMatrix /> },
+  { id: 12.5, content: <Slide6i_MigrationPath /> },
+  { id: 12.6, content: <Slide6j_OperationalBurden /> },
+  { id: 12.7, content: <Slide6k_ComplianceAudit /> },
+  { id: 12.8, content: <Slide6l_DataResidency /> },
+  { id: 12.9, content: <Slide6m_FinOps /> },
+  { id: 12.91, content: <Slide6n_IncidentAutomation /> },
+  { id: 12.92, content: <Slide6o_InstrumentationReadiness /> },
+  { id: 12.93, content: <Slide6p_ServiceOwnership /> },
+  { id: 12.94, content: <Slide6q_ManagedServicesTiers /> },
+  { id: 12.95, content: <Slide6r_VendorSprawl /> },
+  { id: 12.96, content: <Slide6s_SuccessBlueprint /> },
+  { id: 12.97, content: <Slide6t_MaturityModel /> },
   { id: 13, content: <Slide11_Demo /> },
   { id: 14, content: <Slide7_TCO /> },
   { id: 15, content: <Slide7a_TCODeepDive /> },
