@@ -44,6 +44,7 @@ import Slide9_ProvenResults from './slides/Slide9_ProvenResults';
 import Slide9a_SLOs from './slides/Slide9a_SLOs';
 import Slide10_Conclusion from './slides/Slide10_Conclusion';
 import Slide10a_DevLoop from './slides/Slide10a_DevLoop';
+import Slide10b_NotSetAndForget from './slides/Slide10b_NotSetAndForget';
 import Slide11_Demo from './slides/Slide11_Demo';
 
 import logo from './assets/logo.svg';
@@ -90,6 +91,7 @@ const slides = [
   { id: 17.1, content: <Slide9a_SLOs /> }, // Measuring success
   { id: 18, content: <Slide10_Conclusion /> },
   { id: 18.1, content: <Slide10a_DevLoop /> }, // Nice to have
+  { id: 18.2, content: <Slide10b_NotSetAndForget /> }, // Emphasize continuous ownership
 ];
 
 function App() {
