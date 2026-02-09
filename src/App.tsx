@@ -1,97 +1,117 @@
 import { useState, useEffect, useCallback } from 'react';
 import Slide from './components/Slide';
-import { Star } from 'lucide-react';
+import { BarChart3, Blocks, Compass, ShieldCheck, Star, Target } from 'lucide-react';
 
 // Import slide components
-import TitleSlide from './slides/TitleSlide';
-import Slide1a_PainPoints from './slides/Slide1a_PainPoints';
-import Slide1_WhyNow from './slides/Slide1_WhyNow';
-import Slide2_FinancialStakes from './slides/Slide2_FinancialStakes';
-import Slide3_Evolution from './slides/Slide3_Evolution';
-import Slide4_ThreePillars from './slides/Slide4_ThreePillars';
-import Slide4a_Prerequisites from './slides/Slide4a_Prerequisites';
-import Slide4b_Adoption from './slides/Slide4b_Adoption';
-import Slide5_TheBridge from './slides/Slide5_TheBridge';
-import Slide5a_Collector from './slides/Slide5a_Collector';
-import Slide6_MarketLandscape from './slides/Slide6_MarketLandscape';
-import Slide6a_AWSNativeServices from './slides/Slide6a_AWSNativeServices';
-import Slide6b_AWSNativeWorkflow from './slides/Slide6b_AWSNativeWorkflow';
-import Slide6c_AWSManagedOSS from './slides/Slide6c_AWSManagedOSS';
-import Slide6d_ThirdPartySaaS from './slides/Slide6d_ThirdPartySaaS';
-import Slide6e_Security from './slides/Slide6e_Security';
-import Slide6f_AWSCoverageMap from './slides/Slide6f_AWSCoverageMap';
-import Slide6g_AWSArchitectureReference from './slides/Slide6g_AWSArchitectureReference';
-import Slide6h_DecisionMatrix from './slides/Slide6h_DecisionMatrix';
-import Slide6i_MigrationPath from './slides/Slide6i_MigrationPath';
-import Slide6j_OperationalBurden from './slides/Slide6j_OperationalBurden';
-import Slide6k_ComplianceAudit from './slides/Slide6k_ComplianceAudit';
-import Slide6l_DataResidency from './slides/Slide6l_DataResidency';
-import Slide6m_FinOps from './slides/Slide6m_FinOps';
-import Slide6n_IncidentAutomation from './slides/Slide6n_IncidentAutomation';
-import Slide6o_InstrumentationReadiness from './slides/Slide6o_InstrumentationReadiness';
-import Slide6p_ServiceOwnership from './slides/Slide6p_ServiceOwnership';
-import Slide6q_ManagedServicesTiers from './slides/Slide6q_ManagedServicesTiers';
-import Slide6r_VendorSprawl from './slides/Slide6r_VendorSprawl';
-import Slide6s_SuccessBlueprint from './slides/Slide6s_SuccessBlueprint';
-import Slide6t_MaturityModel from './slides/Slide6t_MaturityModel';
+import TitleSlide from './slides/Deck01_Title';
+import Slide1a_PainPoints from './slides/Deck02_PainPoints';
+import Slide1b_SilentFailures from './slides/Deck03_SilentFailures';
+import Slide1_WhyNow from './slides/Deck04_WhyNow';
+import Slide2_FinancialStakes from './slides/Deck05_FinancialStakes';
+import Slide3_Evolution from './slides/Deck06_MonitoringVsObservability';
+import Slide4_ThreePillars from './slides/Deck07_ThreePillars';
+import Slide4a_Prerequisites from './slides/Deck08_Prerequisites';
+import Slide4b_Adoption from './slides/Deck09_AutoInstrumentation';
+import Slide5_TheBridge from './slides/Deck10_OTelBridge';
+import Slide5a_Collector from './slides/Deck11_OTelCollector';
+import Slide6_MarketLandscape from './slides/Deck12_MarketLandscape';
+import Slide6a_AWSNativeServices from './slides/Deck14_AWSNativeServices';
+import Slide6b_AWSNativeWorkflow from './slides/Deck15_AWSNativeWorkflow';
+import Slide6c_AWSManagedOSS from './slides/Deck18_AWSManagedOSS';
+import Slide6d_ThirdPartySaaS from './slides/Deck20_ThirdPartySaaS';
+import Slide6e_Security from './slides/Deck30_SecurityGovernance';
+import Slide6f_AWSCoverageMap from './slides/Deck16_AWSCoverageMap';
+import Slide6g_AWSArchitectureReference from './slides/Deck17_AWSArchitectureReference';
+import Slide6h_DecisionMatrix from './slides/Deck13_DecisionMatrix';
+import Slide6i_MigrationPath from './slides/Deck22_MigrationPath';
+import Slide6j_OperationalBurden from './slides/Deck24_OperationalBurden';
+import Slide6k_ComplianceAudit from './slides/Deck28_ComplianceAudit';
+import Slide6l_DataResidency from './slides/Deck29_DataResidency';
+import Slide6m_FinOps from './slides/Deck31_FinOps';
+import Slide6n_IncidentAutomation from './slides/Deck27_IncidentAutomation';
+import Slide6o_InstrumentationReadiness from './slides/Deck26_InstrumentationReadiness';
+import Slide6p_ServiceOwnership from './slides/Deck25_ServiceOwnershipRACI';
+import Slide6q_ManagedServicesTiers from './slides/Deck23_ManagedServicesTiers';
+import Slide6r_VendorSprawl from './slides/Deck21_VendorSprawl';
+import Slide6s_SuccessBlueprint from './slides/Deck37_SuccessBlueprint';
+import Slide6t_MaturityModel from './slides/Deck36_MaturityModel';
 
-import Slide7_TCO from './slides/Slide7_TCO';
-import Slide7a_TCODeepDive from './slides/Slide7a_TCODeepDive';
-import Slide8_OutageChecklist from './slides/Slide8_OutageChecklist';
-import Slide8a_Sampling from './slides/Slide8a_Sampling';
-import Slide8b_GoldenPath from './slides/Slide8b_GoldenPath';
-import Slide9_ProvenResults from './slides/Slide9_ProvenResults';
-import Slide9a_SLOs from './slides/Slide9a_SLOs';
-import Slide10_Conclusion from './slides/Slide10_Conclusion';
-import Slide10a_DevLoop from './slides/Slide10a_DevLoop';
-import Slide10b_NotSetAndForget from './slides/Slide10b_NotSetAndForget';
-import Slide11_Demo from './slides/Slide11_Demo';
+import Slide7_TCO from './slides/Deck32_TCO';
+import Slide7a_TCODeepDive from './slides/Deck33_TCODeepDive';
+import Slide8_OutageChecklist from './slides/Deck34_OutageChecklist';
+import Slide8a_Sampling from './slides/Deck35_SmartSampling';
+import Slide8b_GoldenPath from './slides/Deck19_GoldenPathArchitecture';
+import Slide9_ProvenResults from './slides/Deck38_ProvenResults';
+import Slide9a_SLOs from './slides/Deck39_SLOs';
+import Slide10_Conclusion from './slides/Deck43_Conclusion';
+import Slide10a_DevLoop from './slides/Deck40_DeveloperLoop';
+import Slide10b_NotSetAndForget from './slides/Deck42_NotSetAndForget';
+import Slide11_Demo from './slides/Deck41_Demo';
+import ArcSlide from './slides/ArcSlide';
 
 import logo from './assets/logo.svg';
 
 const slides = [
+  // Intro
   { id: 1, content: <TitleSlide /> },
-  { id: 1.1, content: <Slide1a_PainPoints /> }, // Start with the problem
-  { id: 2, content: <Slide1_WhyNow /> },
-  { id: 3, content: <Slide2_FinancialStakes /> },
-  { id: 4, content: <Slide3_Evolution /> },
-  { id: 5, content: <Slide4_ThreePillars /> },
-  { id: 5.1, content: <Slide4b_Adoption /> }, // Solution: Easy to start
-  { id: 6, content: <Slide4a_Prerequisites /> },
-  { id: 7, content: <Slide5_TheBridge /> },
-  { id: 7.1, content: <Slide5a_Collector /> }, // Nice to have
-  { id: 8, content: <Slide6_MarketLandscape /> },
-  { id: 9, content: <Slide6a_AWSNativeServices /> },
-  { id: 10, content: <Slide6b_AWSNativeWorkflow /> },
-  { id: 11, content: <Slide6c_AWSManagedOSS /> },
-  { id: 12, content: <Slide6d_ThirdPartySaaS /> },
-  { id: 12.1, content: <Slide6e_Security /> }, // Nice to have
-  { id: 12.2, content: <Slide6f_AWSCoverageMap /> },
-  { id: 12.3, content: <Slide6g_AWSArchitectureReference /> },
-  { id: 12.4, content: <Slide6h_DecisionMatrix /> },
-  { id: 12.5, content: <Slide6i_MigrationPath /> },
-  { id: 12.6, content: <Slide6j_OperationalBurden /> },
-  { id: 12.7, content: <Slide6k_ComplianceAudit /> },
-  { id: 12.8, content: <Slide6l_DataResidency /> },
-  { id: 12.9, content: <Slide6m_FinOps /> },
-  { id: 12.91, content: <Slide6n_IncidentAutomation /> },
-  { id: 12.92, content: <Slide6o_InstrumentationReadiness /> },
-  { id: 12.93, content: <Slide6p_ServiceOwnership /> },
-  { id: 12.94, content: <Slide6q_ManagedServicesTiers /> },
-  { id: 12.95, content: <Slide6r_VendorSprawl /> },
-  { id: 12.96, content: <Slide6s_SuccessBlueprint /> },
-  { id: 12.97, content: <Slide6t_MaturityModel /> },
-  { id: 13, content: <Slide11_Demo /> },
-  { id: 14, content: <Slide7_TCO /> },
-  { id: 15, content: <Slide7a_TCODeepDive /> },
-  { id: 16, content: <Slide8_OutageChecklist /> },
-  { id: 16.1, content: <Slide8a_Sampling /> }, // Nice to have
-  { id: 16.2, content: <Slide8b_GoldenPath /> }, // Nice to have
-  { id: 17, content: <Slide9_ProvenResults /> },
-  { id: 17.1, content: <Slide9a_SLOs /> }, // Measuring success
-  { id: 18, content: <Slide10_Conclusion /> },
-  { id: 18.1, content: <Slide10a_DevLoop /> }, // Nice to have
-  { id: 18.2, content: <Slide10b_NotSetAndForget /> }, // Emphasize continuous ownership
+  { id: 2, content: <ArcSlide title="Problem Framing" subtitle="Why current monitoring leaves teams flying blind." icon={Target} /> },
+  { id: 3, content: <Slide1a_PainPoints /> },
+  { id: 4, content: <Slide1b_SilentFailures /> },
+  { id: 5, content: <Slide1_WhyNow /> },
+  { id: 6, content: <Slide2_FinancialStakes /> },
+  { id: 7, content: <Slide3_Evolution /> },
+
+  // 2) Foundations
+  { id: 8, content: <ArcSlide title="Foundations" subtitle="The telemetry model and standards needed to start right." icon={Blocks} /> },
+  { id: 9, content: <Slide4_ThreePillars /> },
+  { id: 10, content: <Slide4a_Prerequisites /> },
+  { id: 11, content: <Slide4b_Adoption /> },
+  { id: 12, content: <Slide5_TheBridge /> },
+  { id: 13, content: <Slide5a_Collector /> },
+
+  // 3) Platform choices and architecture
+  { id: 14, content: <ArcSlide title="Options & Architecture" subtitle="How to choose the right platform path and technical blueprint." icon={Compass} /> },
+  { id: 15, content: <Slide6_MarketLandscape /> },
+  { id: 16, content: <Slide6h_DecisionMatrix /> },
+  { id: 17, content: <Slide6a_AWSNativeServices /> },
+  { id: 18, content: <Slide6b_AWSNativeWorkflow /> },
+  { id: 19, content: <Slide6f_AWSCoverageMap /> },
+  { id: 20, content: <Slide6g_AWSArchitectureReference /> },
+  { id: 21, content: <Slide6c_AWSManagedOSS /> },
+  { id: 22, content: <Slide8b_GoldenPath /> },
+  { id: 23, content: <Slide6d_ThirdPartySaaS /> },
+  { id: 24, content: <Slide6r_VendorSprawl /> },
+  { id: 25, content: <Slide6i_MigrationPath /> },
+
+  // 4) Operating model
+  { id: 26, content: <ArcSlide title="Operating Model" subtitle="Who owns observability and how it runs day to day." icon={ShieldCheck} /> },
+  { id: 27, content: <Slide6q_ManagedServicesTiers /> },
+  { id: 28, content: <Slide6j_OperationalBurden /> },
+  { id: 29, content: <Slide6p_ServiceOwnership /> },
+  { id: 30, content: <Slide6o_InstrumentationReadiness /> },
+  { id: 31, content: <Slide6n_IncidentAutomation /> },
+  { id: 32, content: <Slide6k_ComplianceAudit /> },
+  { id: 33, content: <Slide6l_DataResidency /> },
+  { id: 34, content: <Slide6e_Security /> },
+
+  // 5) Economics and reliability execution
+  { id: 35, content: <ArcSlide title="Economics & Reliability" subtitle="Control cost while improving incident response and resilience." icon={BarChart3} /> },
+  { id: 36, content: <Slide6m_FinOps /> },
+  { id: 37, content: <Slide7_TCO /> },
+  { id: 38, content: <Slide7a_TCODeepDive /> },
+  { id: 39, content: <Slide8_OutageChecklist /> },
+  { id: 40, content: <Slide8a_Sampling /> },
+  { id: 41, content: <Slide6t_MaturityModel /> },
+  { id: 42, content: <Slide6s_SuccessBlueprint /> },
+
+  // 6) Outcomes and close
+  { id: 43, content: <ArcSlide title="Outcomes" subtitle="What success looks like and what to do next." icon={Star} /> },
+  { id: 44, content: <Slide9_ProvenResults /> },
+  { id: 45, content: <Slide9a_SLOs /> },
+  { id: 46, content: <Slide10a_DevLoop /> },
+  { id: 47, content: <Slide11_Demo /> },
+  { id: 48, content: <Slide10b_NotSetAndForget /> },
+  { id: 49, content: <Slide10_Conclusion /> },
 ];
 
 function App() {
