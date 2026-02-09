@@ -8,15 +8,15 @@ const Slide4b_Adoption: React.FC = () => {
                 The "Easy Button": Auto-Instrumentation
             </h2>
 
-            <div className="flex items-center justify-center gap-16">
+            <div className="flex flex-col items-center justify-center gap-8 lg:flex-row lg:gap-16">
                 {/* The "Hard" Way */}
-                <div className="w-1/3 opacity-50 blur-[1px] transform scale-95 transition-all hover:opacity-80 hover:blur-0 hover:scale-100">
+                <div className="w-full max-w-xl opacity-70 transform transition-all hover:opacity-90 lg:w-1/3 lg:scale-95">
                     <div className="glass-card p-8 space-y-4 border-obs-white/5">
-                        <div className="flex items-center gap-4 text-obs-white/50">
+                        <div className="flex items-center gap-4 text-obs-white/70">
                             <Code2 size={32} />
                             <h3 className="text-xl font-bold">Manual Coding</h3>
                         </div>
-                        <div className="bg-obs-dark/80 p-4 rounded font-mono text-xs text-obs-white/40 leading-relaxed">
+                        <div className="bg-obs-dark/80 p-4 rounded font-mono text-xs text-obs-white/60 leading-relaxed">
                             span = tracer.startSpan(...)<br />
                             span.setAttribute(...)<br />
                             try &#123;<br />
@@ -30,7 +30,7 @@ const Slide4b_Adoption: React.FC = () => {
                 </div>
 
                 {/* The "Easy" Way */}
-                <div className="w-5/12 relative">
+                <div className="w-full max-w-2xl relative lg:w-5/12">
                     <div className="absolute -inset-1 bg-gradient-to-r from-obs-yellow to-jam-green opacity-30 blur-lg rounded-2xl" />
                     <div className="glass-card p-10 space-y-6 border-obs-yellow/50 bg-obs-dark/90 relative z-10">
                         <div className="flex items-center gap-4 text-obs-yellow">
