@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import Slide from './components/Slide';
-import { BarChart3, Blocks, Compass, Maximize2, Minimize2, ShieldCheck, Star, Target } from 'lucide-react';
+import { BarChart3, Compass, Maximize2, Minimize2, ShieldCheck, Star } from 'lucide-react';
 
 // Import slide components
 import TitleSlide from './slides/Deck01_Title';
