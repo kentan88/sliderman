@@ -6,13 +6,13 @@ import { BarChart3, Blocks, Compass, Maximize2, Minimize2, ShieldCheck, Star, Ta
 import TitleSlide from './slides/Deck01_Title';
 import SlideAgenda from './slides/Deck02_Agenda';
 import SlideWhatIsObservability from './slides/Deck53_WhatIsObservability';
-import Slide1a_PainPoints from './slides/Deck02_PainPoints';
-import Slide1b_SilentFailures from './slides/Deck03_SilentFailures';
+// import Slide1a_PainPoints from './slides/Deck02_PainPoints';
+// import Slide1b_SilentFailures from './slides/Deck03_SilentFailures';
 import Slide1_WhyNow from './slides/Deck04_WhyNow';
-import Slide2_FinancialStakes from './slides/Deck05_FinancialStakes';
+// import Slide2_FinancialStakes from './slides/Deck05_FinancialStakes';
 import Slide3_Evolution from './slides/Deck06_MonitoringVsObservability';
 import SlideRiseOfOpenTelemetry from './slides/Deck54_RiseOfOpenTelemetry';
-import Slide4_ThreePillars from './slides/Deck07_ThreePillars';
+// import Slide4_ThreePillars from './slides/Deck07_ThreePillars';
 import Slide4a_Prerequisites from './slides/Deck08_Prerequisites';
 import Slide4b_Adoption from './slides/Deck09_AutoInstrumentation';
 import Slide5_TheBridge from './slides/Deck10_OTelBridge';
@@ -24,35 +24,35 @@ import Slide6c_AWSManagedOSS from './slides/Deck18_AWSManagedOSS';
 import Slide6d_ThirdPartySaaS from './slides/Deck20_ThirdPartySaaS';
 import Slide6e_Security from './slides/Deck30_SecurityGovernance';
 import Slide6f_AWSCoverageMap from './slides/Deck16_AWSCoverageMap';
-import Slide6g_AWSArchitectureReference from './slides/Deck17_AWSArchitectureReference';
+// import Slide6g_AWSArchitectureReference from './slides/Deck17_AWSArchitectureReference';
 import Slide6h_DecisionMatrix from './slides/Deck13_DecisionMatrix';
 import Slide6i_MigrationPath from './slides/Deck22_MigrationPath';
 import Slide6j_OperationalBurden from './slides/Deck24_OperationalBurden';
 import Slide6k_ComplianceAudit from './slides/Deck28_ComplianceAudit';
 import Slide6l_DataResidency from './slides/Deck29_DataResidency';
-import Slide6m_FinOps from './slides/Deck31_FinOps';
+// import Slide6m_FinOps from './slides/Deck31_FinOps';
 import Slide6n_IncidentAutomation from './slides/Deck27_IncidentAutomation';
 import Slide6o_InstrumentationReadiness from './slides/Deck26_InstrumentationReadiness';
 import Slide6p_ServiceOwnership from './slides/Deck25_ServiceOwnershipRACI';
 import Slide6q_ManagedServicesTiers from './slides/Deck23_ManagedServicesTiers';
 import Slide6r_VendorSprawl from './slides/Deck21_VendorSprawl';
-import Slide6s_SuccessBlueprint from './slides/Deck37_SuccessBlueprint';
+// import Slide6s_SuccessBlueprint from './slides/Deck37_SuccessBlueprint';
 import Slide6t_MaturityModel from './slides/Deck36_MaturityModel';
 
 import Slide7_TCO from './slides/Deck32_TCO';
 import Slide7a_TCODeepDive from './slides/Deck33_TCODeepDive';
-import Slide8_OutageChecklist from './slides/Deck34_OutageChecklist';
+// import Slide8_OutageChecklist from './slides/Deck34_OutageChecklist';
 import Slide8a_Sampling from './slides/Deck35_SmartSampling';
 import Slide8b_GoldenPath from './slides/Deck19_GoldenPathArchitecture';
 import Slide9_ProvenResults from './slides/Deck38_ProvenResults';
 import Slide9a_SLOs from './slides/Deck39_SLOs';
 import Slide10_Conclusion from './slides/Deck43_Conclusion';
-import Slide10a_DevLoop from './slides/Deck40_DeveloperLoop';
+// import Slide10a_DevLoop from './slides/Deck40_DeveloperLoop';
 import Slide10b_NotSetAndForget from './slides/Deck42_NotSetAndForget';
 import Slide11_Demo from './slides/Deck41_Demo';
 import ArcSlide from './slides/ArcSlide';
-import Slide50_JAMOnePager from './slides/Deck50_JAMOnePager';
-import Slide51_JAMPlatformOptions from './slides/Deck51_JAMPlatformOptions';
+// import Slide50_JAMOnePager from './slides/Deck50_JAMOnePager';
+// import Slide51_JAMPlatformOptions from './slides/Deck51_JAMPlatformOptions';
 
 import logo from './assets/logo.svg';
 
@@ -182,7 +182,7 @@ function App() {
   }, [paginate, toggleFullscreen]);
 
   return (
-    <div className="relative h-screen w-screen bg-obs-dark overflow-hidden font-sans text-obs-white selection:bg-obs-yellow selection:text-obs-dark">
+    <div className="relative h-screen w-screen overflow-hidden bg-[radial-gradient(1200px_650px_at_20%_0%,rgba(22,58,129,0.35),transparent_55%),radial-gradient(900px_500px_at_85%_100%,rgba(70,120,134,0.22),transparent_60%),linear-gradient(165deg,#0d1833_0%,#101F40_45%,#132e60_100%)] font-sans text-obs-white selection:bg-obs-yellow selection:text-obs-dark">
       {/* Background elements - now using Star icons */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         {[...Array(50)].map((_, i) => (

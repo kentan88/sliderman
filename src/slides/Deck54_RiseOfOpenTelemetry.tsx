@@ -11,19 +11,12 @@ const SlideRiseOfOpenTelemetry: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-6">
-        <div className="glass-card p-8 border-obs-yellow/25 border-dashed min-h-[280px] flex flex-col justify-between">
-          <p className="text-xs font-mono uppercase tracking-[0.2em] text-obs-yellow/80">Infographic Space</p>
-          <p className="text-2xl font-bold text-obs-white">Adoption Trend</p>
-        </div>
-        <div className="glass-card p-8 border-obs-yellow/25 border-dashed min-h-[280px] flex flex-col justify-between">
-          <p className="text-xs font-mono uppercase tracking-[0.2em] text-obs-yellow/80">Infographic Space</p>
-          <p className="text-2xl font-bold text-obs-white">Ecosystem Growth</p>
-        </div>
-        <div className="glass-card p-8 border-obs-yellow/25 border-dashed min-h-[280px] flex flex-col justify-between">
-          <p className="text-xs font-mono uppercase tracking-[0.2em] text-obs-yellow/80">Infographic Space</p>
-          <p className="text-2xl font-bold text-obs-white">Enterprise Standardization</p>
-        </div>
+      <div className="w-full">
+        <img
+          src="/SlideRiseOfOpenTelemetry.png"
+          alt="Rise of OpenTelemetry infographic"
+          className="w-full h-auto max-h-[250px] object-contain mx-auto"
+        />
       </div>
     </div>
   );
