@@ -25,12 +25,10 @@ import Slide6t_MaturityModel from './slides/Deck21_MaturityModel';
 import Slide7_TCO from './slides/Deck18_TCO';
 import Slide7a_TCODeepDive from './slides/Deck19_TCODeepDive';
 import Slide8a_Sampling from './slides/Deck20_SmartSampling';
-import Slide9_ProvenResults from './slides/Deck22_ProvenResults';
 import Slide9a_SLOs from './slides/Deck23_SLOs';
 import Slide10_Conclusion from './slides/Deck26_Conclusion';
 import Slide10b_NotSetAndForget from './slides/Deck25_NotSetAndForget';
 import Slide11_Demo from './slides/Deck24_Demo';
-import ArcSlide from './slides/ArcSlide';
 
 import logo from './assets/logo.svg';
 
@@ -68,8 +66,6 @@ const slides = [
   { id: 40, content: <Slide8a_Sampling /> },
 
   // 6) Outcomes and close
-  // { id: 43, content: <ArcSlide title="Outcomes" subtitle="What success looks like and what to do next." icon={Star} /> },
-  // { id: 44, content: <Slide9_ProvenResults /> },
   { id: 47, content: <Slide11_Demo /> },
   { id: 48, content: <Slide10b_NotSetAndForget /> },
   { id: 49, content: <Slide10_Conclusion /> },
