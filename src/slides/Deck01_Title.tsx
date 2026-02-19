@@ -41,9 +41,9 @@ const TitleSlide: React.FC = () => {
             </div>
 
             {/* Start Prompt */}
-            <div className="absolute bottom-12 animate-bounce text-obs-white/30">
+            {/* <div className="absolute bottom-12 animate-bounce text-obs-white/30">
                 <p className="text-xs font-mono uppercase tracking-[0.3em]">Press Space to Start</p>
-            </div>
+            </div> */}
         </div>
     );
 };

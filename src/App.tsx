@@ -1,14 +1,17 @@
 import { useState, useEffect, useCallback } from 'react';
 import Slide from './components/Slide';
-import { BarChart3, Blocks, Compass, ShieldCheck, Star, Target } from 'lucide-react';
+import { BarChart3, Blocks, Compass, Maximize2, Minimize2, ShieldCheck, Star, Target } from 'lucide-react';
 
 // Import slide components
 import TitleSlide from './slides/Deck01_Title';
+import SlideAgenda from './slides/Deck02_Agenda';
+import SlideWhatIsObservability from './slides/Deck53_WhatIsObservability';
 import Slide1a_PainPoints from './slides/Deck02_PainPoints';
 import Slide1b_SilentFailures from './slides/Deck03_SilentFailures';
 import Slide1_WhyNow from './slides/Deck04_WhyNow';
 import Slide2_FinancialStakes from './slides/Deck05_FinancialStakes';
 import Slide3_Evolution from './slides/Deck06_MonitoringVsObservability';
+import SlideRiseOfOpenTelemetry from './slides/Deck54_RiseOfOpenTelemetry';
 import Slide4_ThreePillars from './slides/Deck07_ThreePillars';
 import Slide4a_Prerequisites from './slides/Deck08_Prerequisites';
 import Slide4b_Adoption from './slides/Deck09_AutoInstrumentation';
@@ -48,22 +51,27 @@ import Slide10a_DevLoop from './slides/Deck40_DeveloperLoop';
 import Slide10b_NotSetAndForget from './slides/Deck42_NotSetAndForget';
 import Slide11_Demo from './slides/Deck41_Demo';
 import ArcSlide from './slides/ArcSlide';
+import Slide50_JAMOnePager from './slides/Deck50_JAMOnePager';
+import Slide51_JAMPlatformOptions from './slides/Deck51_JAMPlatformOptions';
 
 import logo from './assets/logo.svg';
 
 const slides = [
   // Intro
   { id: 1, content: <TitleSlide /> },
-  { id: 2, content: <ArcSlide title="Problem Framing" subtitle="Why current monitoring leaves teams flying blind." icon={Target} /> },
-  { id: 3, content: <Slide1a_PainPoints /> },
-  { id: 4, content: <Slide1b_SilentFailures /> },
+  { id: 52, content: <SlideAgenda /> },
+  { id: 53, content: <SlideWhatIsObservability /> },
+  // { id: 2, content: <ArcSlide title="Problem Framing" subtitle="Why current monitoring leaves teams flying blind." icon={Target} /> },
+  // { id: 3, content: <Slide1a_PainPoints /> },
+  // { id: 4, content: <Slide1b_SilentFailures /> },
   { id: 5, content: <Slide1_WhyNow /> },
-  { id: 6, content: <Slide2_FinancialStakes /> },
+  // { id: 6, content: <Slide2_FinancialStakes /> },
   { id: 7, content: <Slide3_Evolution /> },
+  { id: 54, content: <SlideRiseOfOpenTelemetry /> },
 
   // 2) Foundations
-  { id: 8, content: <ArcSlide title="Foundations" subtitle="The telemetry model and standards needed to start right." icon={Blocks} /> },
-  { id: 9, content: <Slide4_ThreePillars /> },
+  // { id: 8, content: <ArcSlide title="Foundations" subtitle="The telemetry model and standards needed to start right." icon={Blocks} /> },
+  // { id: 9, content: <Slide4_ThreePillars /> },
   { id: 10, content: <Slide4a_Prerequisites /> },
   { id: 11, content: <Slide4b_Adoption /> },
   { id: 12, content: <Slide5_TheBridge /> },
@@ -76,7 +84,7 @@ const slides = [
   { id: 17, content: <Slide6a_AWSNativeServices /> },
   { id: 18, content: <Slide6b_AWSNativeWorkflow /> },
   { id: 19, content: <Slide6f_AWSCoverageMap /> },
-  { id: 20, content: <Slide6g_AWSArchitectureReference /> },
+  // { id: 20, content: <Slide6g_AWSArchitectureReference /> },
   { id: 21, content: <Slide6c_AWSManagedOSS /> },
   { id: 22, content: <Slide8b_GoldenPath /> },
   { id: 23, content: <Slide6d_ThirdPartySaaS /> },
@@ -96,27 +104,42 @@ const slides = [
 
   // 5) Economics and reliability execution
   { id: 35, content: <ArcSlide title="Economics & Reliability" subtitle="Control cost while improving incident response and resilience." icon={BarChart3} /> },
-  { id: 36, content: <Slide6m_FinOps /> },
+  // { id: 36, content: <Slide6m_FinOps /> },
   { id: 37, content: <Slide7_TCO /> },
   { id: 38, content: <Slide7a_TCODeepDive /> },
-  { id: 39, content: <Slide8_OutageChecklist /> },
+  // { id: 39, content: <Slide8_OutageChecklist /> },
   { id: 40, content: <Slide8a_Sampling /> },
   { id: 41, content: <Slide6t_MaturityModel /> },
-  { id: 42, content: <Slide6s_SuccessBlueprint /> },
+  // { id: 42, content: <Slide6s_SuccessBlueprint /> },
 
   // 6) Outcomes and close
   { id: 43, content: <ArcSlide title="Outcomes" subtitle="What success looks like and what to do next." icon={Star} /> },
   { id: 44, content: <Slide9_ProvenResults /> },
   { id: 45, content: <Slide9a_SLOs /> },
-  { id: 46, content: <Slide10a_DevLoop /> },
+  // { id: 46, content: <Slide10a_DevLoop /> },
   { id: 47, content: <Slide11_Demo /> },
   { id: 48, content: <Slide10b_NotSetAndForget /> },
   { id: 49, content: <Slide10_Conclusion /> },
+
+  // 7) JAM 2026 one-pager (condensed)
+  // { id: 50, content: <Slide50_JAMOnePager /> },
+  // { id: 51, content: <Slide51_JAMPlatformOptions /> },
 ];
 
 function App() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const getInitialSlide = () => {
+    const params = new URLSearchParams(window.location.search);
+    const rawSlide = Number(params.get('slide'));
+    if (!Number.isFinite(rawSlide)) return 0;
+    const zeroBased = Math.floor(rawSlide) - 1;
+    if (zeroBased < 0 || zeroBased >= slides.length) return 0;
+    return zeroBased;
+  };
+
+  const [currentSlide, setCurrentSlide] = useState(getInitialSlide);
   const [direction, setDirection] = useState(0);
+  const isExportMode = new URLSearchParams(window.location.search).get('export') === '1';
+  const [isFullscreen, setIsFullscreen] = useState(Boolean(document.fullscreenElement));
 
   const paginate = useCallback((newDirection: number) => {
     const nextSlide = currentSlide + newDirection;
@@ -126,14 +149,37 @@ function App() {
     }
   }, [currentSlide]);
 
+  const toggleFullscreen = useCallback(async () => {
+    if (document.fullscreenElement) {
+      await document.exitFullscreen();
+      return;
+    }
+
+    await document.documentElement.requestFullscreen();
+  }, []);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight' || e.key === ' ') paginate(1);
       if (e.key === 'ArrowLeft') paginate(-1);
+      if (e.key.toLowerCase() === 'f') {
+        e.preventDefault();
+        void toggleFullscreen();
+      }
     };
+
+    const handleFullscreenChange = () => {
+      setIsFullscreen(Boolean(document.fullscreenElement));
+    };
+
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [paginate]);
+    window.addEventListener('fullscreenchange', handleFullscreenChange);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, [paginate, toggleFullscreen]);
 
   return (
     <div className="relative h-screen w-screen bg-obs-dark overflow-hidden font-sans text-obs-white selection:bg-obs-yellow selection:text-obs-dark">
@@ -178,9 +224,23 @@ function App() {
       </div>
 
       {/* Helper Text */}
-      <div className="absolute bottom-6 left-10 text-obs-white/20 text-[10px] uppercase tracking-widest font-bold">
-        Use Arrow Keys to Navigate
-      </div>
+      {!isExportMode && (
+        <div className="absolute bottom-6 left-10 text-obs-white/20 text-[10px] uppercase tracking-widest font-bold">
+          Use Arrow Keys to Navigate • Press F for Fullscreen
+        </div>
+      )}
+
+      {!isExportMode && (
+        <button
+          type="button"
+          onClick={() => void toggleFullscreen()}
+          className="absolute bottom-5 right-8 z-50 inline-flex items-center gap-2 rounded-full border border-obs-white/30 bg-obs-dark/70 px-4 py-2 text-xs font-bold uppercase tracking-widest text-obs-white transition hover:border-obs-white/60 hover:bg-obs-dark/90"
+          aria-label={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
+        >
+          {isFullscreen ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
+          {isFullscreen ? 'Exit Fullscreen' : 'Fullscreen'}
+        </button>
+      )}
     </div>
   );
 }

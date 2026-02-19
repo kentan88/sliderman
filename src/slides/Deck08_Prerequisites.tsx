@@ -8,11 +8,11 @@ const Slide4a_Prerequisites: React.FC = () => {
                 Pre-requisites to Adoption
             </h2>
 
-            <div className="bg-obs-white/5 border border-obs-white/10 rounded-2xl p-6 text-center mb-8">
+            {/* <div className="bg-obs-white/5 border border-obs-white/10 rounded-2xl p-6 text-center mb-8">
                 <p className="text-xl text-obs-white font-medium">
                     <span className="text-obs-yellow font-bold">The Hard Truth:</span> Data doesn't appear by magic. Your code must emit it.
                 </p>
-            </div>
+            </div> */}
 
             <div className="grid grid-cols-2 gap-8">
                 {/* Standard Battle */}

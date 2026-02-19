@@ -62,3 +62,18 @@
 .animate-pulse-subtle {
   animation: pulse-subtle 4s ease-in-out infinite;
 }
+
+@media print {
+  @page {
+    size: 13.333in 7.5in;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 13.333in;
+    height: 7.5in;
+    margin: 0;
+    overflow: hidden;
+  }
+}
