@@ -10,7 +10,7 @@ type Pathway = {
 
 const pathways: Pathway[] = [
   {
-    title: 'AWS Native (CloudWatch)',
+    title: 'AWS Native (CloudWatch, X-Ray)',
     bestFor: 'Pure AWS shops, small teams, low complexity.',
     detail: '',
     image: 'Deck12_MarketLandscape_1.png',

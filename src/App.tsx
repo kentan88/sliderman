@@ -68,8 +68,8 @@ const slides = [
   { id: 40, content: <Slide8a_Sampling /> },
 
   // 6) Outcomes and close
-  { id: 43, content: <ArcSlide title="Outcomes" subtitle="What success looks like and what to do next." icon={Star} /> },
-  { id: 44, content: <Slide9_ProvenResults /> },
+  // { id: 43, content: <ArcSlide title="Outcomes" subtitle="What success looks like and what to do next." icon={Star} /> },
+  // { id: 44, content: <Slide9_ProvenResults /> },
   { id: 47, content: <Slide11_Demo /> },
   { id: 48, content: <Slide10b_NotSetAndForget /> },
   { id: 49, content: <Slide10_Conclusion /> },

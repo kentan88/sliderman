@@ -71,12 +71,6 @@ const Slide6c_AWSManagedOSS: React.FC = () => {
                     </ul>
                 </div>
             </div>
-
-            <div className="text-center mt-12 bg-obs-white/5 p-4 rounded-xl border border-obs-white/10">
-                <p className="text-obs-white text-lg font-medium">
-                    "Stop managing metrics infrastructure. Start using it."
-                </p>
-            </div>
         </div>
     );
 };
