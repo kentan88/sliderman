@@ -73,11 +73,11 @@ const Slide6b_AWSNativeWorkflow: React.FC = () => {
                 </div>
             </div>
 
-            <div className="text-center mt-12 bg-obs-white/5 p-4 rounded-xl border border-obs-white/10">
+            {/* <div className="text-center mt-12 bg-obs-white/5 p-4 rounded-xl border border-obs-white/10">
                 <p className="text-obs-white text-lg font-medium">
                     "From code to click to alarm in one ecosystem."
                 </p>
-            </div>
+            </div> */}
         </div>
     );
 };

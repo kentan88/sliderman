@@ -5,7 +5,7 @@ const Slide3_Evolution: React.FC = () => {
     return (
         <div className="w-full max-w-6xl">
             <h2 className="slide-title mb-16">
-                Evolution: Monitoring vs. Observability
+                Monitoring vs. Observability
             </h2>
             <div className="grid grid-cols-2 gap-12">
                 {/* Monitoring Side */}

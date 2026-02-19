@@ -10,7 +10,7 @@ const Slide1_WhyNow: React.FC = () => {
                 <img
                     src={`${import.meta.env.BASE_URL}Slide1_WhyNow.png`}
                     alt="Why now observability overview"
-                    className="w-full h-auto max-h-[400px] object-contain mx-auto"
+                    className="w-full h-auto max-h-[520px] object-contain mx-auto"
                 />
             </div>
         </div>
