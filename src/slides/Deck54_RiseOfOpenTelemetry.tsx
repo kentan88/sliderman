@@ -13,7 +13,7 @@ const SlideRiseOfOpenTelemetry: React.FC = () => {
 
       <div className="w-full">
         <img
-          src="/SlideRiseOfOpenTelemetry.png"
+          src={`${import.meta.env.BASE_URL}SlideRiseOfOpenTelemetry.png`}
           alt="Rise of OpenTelemetry infographic"
           className="w-full h-auto max-h-[250px] object-contain mx-auto"
         />

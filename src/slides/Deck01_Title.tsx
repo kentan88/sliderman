@@ -30,7 +30,7 @@ const TitleSlide: React.FC = () => {
 
                 <div className="relative w-full max-w-2xl mx-auto">
                     <img
-                        src="/slide1.png"
+                        src={`${import.meta.env.BASE_URL}slide1.png`}
                         alt="Observability dashboard preview"
                         className="relative z-10 w-full h-auto"
                     />

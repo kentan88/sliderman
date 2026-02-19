@@ -8,7 +8,7 @@ const Slide1_WhyNow: React.FC = () => {
             </h2>
             <div className="w-full">
                 <img
-                    src="/Slide1_WhyNow.png"
+                    src={`${import.meta.env.BASE_URL}Slide1_WhyNow.png`}
                     alt="Why now observability overview"
                     className="w-full h-auto max-h-[400px] object-contain mx-auto"
                 />
