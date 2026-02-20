@@ -1,5 +1,5 @@
 import React from 'react';
-import { Activity, Search } from 'lucide-react';
+import { Activity, Search, Lightbulb} from 'lucide-react';
 
 const Slide3_Evolution: React.FC = () => {
     return (
@@ -76,6 +76,17 @@ const Slide3_Evolution: React.FC = () => {
                     </div>
                 </div>
             </div>
+
+            <div className="glass-card border-obs-white/10 p-5 flex items-center gap-3 mt-12">
+                    <Lightbulb className="h-5 w-5 text-obs-yellow shrink-0" />
+                    <p className="text-obs-white/90 text-lg">
+                    <span className="font-bold text-obs-yellow">Key takeaway:</span> Monitoring tells you
+                    <span className="font-semibold"> when </span>
+                    a system is broken. Observability tells you
+                    <span className="font-semibold"> why </span>
+                    it is broken and how to fix it.
+                    </p>
+                </div>
         </div>
     );
 };

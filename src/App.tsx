@@ -7,13 +7,15 @@ import TitleSlide from './slides/Deck01_Title';
 import SlideAgenda from './slides/Deck02_Agenda';
 import SlideWhatIsObservability from './slides/Deck03_WhatIsObservability';
 import Slide1_WhyNow from './slides/Deck04_WhyNow';
+import SlidePainPointsBeforeAfter from './slides/Deck04a_PainPointsBeforeAfter';
 import Slide3_Evolution from './slides/Deck05_MonitoringVsObservability';
 import SlideRiseOfOpenTelemetry from './slides/Deck06_RiseOfOpenTelemetry';
 import SlideOpenTelemetryCollector from './slides/Deck06a_TheOpenTelemetryCollector';
 import SlideCollectorReceiver from './slides/Deck06a_SlideCollectorReceiver';
 import SlideCollectorProcessor from './slides/Deck06a_SlideCollectorProcessor';
 import SlideCollectorExporter from './slides/Deck06a_SlideCollectorExporter';
-
+import SlideCollectorConfigFile from './slides/Deck06b_CollectorConfigFile';
+import SlideCollectorAdvancedConfig from './slides/Deck06b_CollectorAdvancedConfig';
 
 import Slide4b_Adoption from './slides/Deck07_AutoInstrumentation';
 import Slide5_TheBridge from './slides/Deck08_OTelBridge';
@@ -43,13 +45,16 @@ const slides = [
   { id: 1, content: <TitleSlide /> },
   { id: 52, content: <SlideAgenda /> },
   { id: 53, content: <SlideWhatIsObservability /> },
-  { id: 5, content: <Slide1_WhyNow /> },
   { id: 7, content: <Slide3_Evolution /> },
+  { id: 5, content: <Slide1_WhyNow /> },
+  { id: 6, content: <SlidePainPointsBeforeAfter /> },
   { id: 54, content: <SlideRiseOfOpenTelemetry /> },
   { id: 55, content: <SlideOpenTelemetryCollector /> },
   { id: 56, content: <SlideCollectorReceiver /> },
   { id: 57, content: <SlideCollectorProcessor/> },
   { id: 58, content: <SlideCollectorExporter/> },
+  { id: 59, content: <SlideCollectorConfigFile /> },
+  { id: 60, content: <SlideCollectorAdvancedConfig /> },
 
   // 2) Foundations
   { id: 11, content: <Slide4b_Adoption /> },

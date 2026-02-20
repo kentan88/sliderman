@@ -11,7 +11,7 @@ const SlideCollectorProcessor: React.FC = () => {
         </p>
       </div>
 
-      <div className="glass-card border-obs-white/10 p-4">
+      <div>
         <img
           src={`${import.meta.env.BASE_URL}Deck06a_SlideCollectorProcessor.png`}
           alt="Collector processor diagram"
