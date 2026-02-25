@@ -236,11 +236,11 @@ function App() {
       </div>
 
       {/* Helper Text */}
-      {!isExportMode && (
+      {/* {!isExportMode && (
         <div className="absolute bottom-6 left-10 text-obs-white/20 text-[10px] uppercase tracking-widest font-bold">
           Use Arrow Keys to Navigate • Press F for Fullscreen
         </div>
-      )}
+      )} */}
 
       {!isExportMode && (
         <button

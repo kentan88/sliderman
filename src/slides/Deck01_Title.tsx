@@ -3,11 +3,11 @@ import logo from '../assets/logo.svg';
 
 const TitleSlide: React.FC = () => {
     return (
-        <div className="flex flex-col items-center justify-center min-h-[80vh] gap-16">
-            <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-                <div className="space-y-10 z-10">
+        <div className="flex flex-col items-center justify-center min-h-[80vh] gap-16 text-center">
+            <div className="w-full max-w-6xl flex justify-center">
+                <div className="space-y-10 z-10 flex flex-col items-center">
                     {/* Logo Section */}
-                    <div className="relative group w-fit mx-auto lg:mx-0">
+                    <div className="relative group w-fit">
                         <div className="absolute inset-0 bg-obs-yellow blur-[120px] opacity-20 rounded-full group-hover:opacity-30 transition-opacity duration-1000" />
                         <img
                             src={logo}
@@ -17,7 +17,7 @@ const TitleSlide: React.FC = () => {
                     </div>
 
                     {/* Main Title */}
-                    <div className="space-y-6 text-center lg:text-left">
+                    <div className="space-y-6">
                         <h1 className="text-5xl lg:text-6xl font-black text-white tracking-tighter leading-none drop-shadow-xl">
                             MODERN <br />
                             <span className="text-obs-yellow">OBSERVABILITY</span>
@@ -26,14 +26,6 @@ const TitleSlide: React.FC = () => {
                             Beyond Monitoring
                         </p>
                     </div>
-                </div>
-
-                <div className="relative w-full max-w-2xl mx-auto">
-                    <img
-                        src={`${import.meta.env.BASE_URL}slide1.png`}
-                        alt="Observability dashboard preview"
-                        className="relative z-10 w-full h-auto"
-                    />
                 </div>
             </div>
 

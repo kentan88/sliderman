@@ -32,6 +32,14 @@ const SlideBiggestPainPoints: React.FC = () => {
         <h2 className="slide-title mb-0">Biggest Pain Points</h2>
       </div>
 
+      <div className="relative w-full max-w-xl mx-auto">
+        <img
+          src={`${import.meta.env.BASE_URL}slide1.png`}
+          alt="Observability dashboard preview"
+          className="relative z-10 w-full h-auto"
+        />
+      </div>
+
       <div className="grid grid-cols-3 gap-6">
         {painPoints.map((item) => {
           const Icon = item.icon;
