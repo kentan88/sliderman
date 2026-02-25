@@ -1,5 +1,5 @@
 import React from 'react';
-import { Send, Cloud, BarChart3, Boxes } from 'lucide-react';
+import { Cloud, BarChart3, Boxes } from 'lucide-react';
 
 const SlideCollectorExporter: React.FC = () => {
   return (

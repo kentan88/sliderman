@@ -8,21 +8,21 @@ import SlideAgenda from './slides/Deck02_Agenda';
 import SlideWhatIsObservability from './slides/Deck03_WhatIsObservability';
 import SlideBiggestPainPoints from './slides/Deck03a_BiggestPainPoints';
 import Slide1_WhyNow from './slides/Deck04_WhyNow';
-import SlideMonolithsToMicroservices from './slides/Deck04b_MonolithsToMicroservices';
+// import SlideMonolithsToMicroservices from './slides/Deck04b_MonolithsToMicroservices';
 import SlidePainPointsBeforeAfter from './slides/Deck04a_PainPointsBeforeAfter';
 import Slide3_Evolution from './slides/Deck05_MonitoringVsObservability';
-import SlideRiseOfOpenTelemetry from './slides/Deck06_RiseOfOpenTelemetry';
+import SlidePreReq from './slides/Deck06_PreReq';
 import SlideOpenTelemetryCollector from './slides/Deck06a_TheOpenTelemetryCollector';
 import SlideCollectorReceiver from './slides/Deck06a_SlideCollectorReceiver';
-import SlideEdgeAgentFlow from './slides/Deck06a_SlideEdgeAgentFlow';
+// import SlideEdgeAgentFlow from './slides/Deck06a_SlideEdgeAgentFlow';
 import SlideCollectorProcessor from './slides/Deck06a_SlideCollectorProcessor';
 import SlideCollectorExporter from './slides/Deck06a_SlideCollectorExporter';
 import SlideCollectorConfigFile from './slides/Deck06b_CollectorConfigFile';
 import SlideCollectorAdvancedConfig from './slides/Deck06b_CollectorAdvancedConfig';
 
 import Slide4b_Adoption from './slides/Deck07_AutoInstrumentation';
-import Slide5_TheBridge from './slides/Deck08_OTelBridge';
-import Slide5a_Collector from './slides/Deck09_OTelCollector';
+// import Slide5_TheBridge from './slides/Deck08_OTelBridge';
+// import Slide5a_Collector from './slides/Deck09_OTelCollector';
 import Slide6_MarketLandscape from './slides/Deck10_MarketLandscape';
 import Slide6a_AWSNativeServices from './slides/Deck12_AWSNativeServices';
 import Slide6b_AWSNativeWorkflow from './slides/Deck13_AWSNativeWorkflow';
@@ -47,25 +47,25 @@ const slides = [
   // Intro
   { id: 1, content: <TitleSlide /> },
   { id: 52, content: <SlideAgenda /> },
-  { id: 53, content: <SlideWhatIsObservability /> },
-  { id: 63, content: <SlideBiggestPainPoints /> },
-  { id: 7, content: <Slide3_Evolution /> },
   { id: 5, content: <Slide1_WhyNow /> },
-  { id: 61, content: <SlideMonolithsToMicroservices /> },
+  { id: 63, content: <SlideBiggestPainPoints /> },
+  // { id: 61, content: <SlideMonolithsToMicroservices /> },
   { id: 6, content: <SlidePainPointsBeforeAfter /> },
-  { id: 54, content: <SlideRiseOfOpenTelemetry /> },
+  { id: 53, content: <SlideWhatIsObservability /> },
+  { id: 7, content: <Slide3_Evolution /> },
+  { id: 54, content: <SlidePreReq /> },
   { id: 55, content: <SlideOpenTelemetryCollector /> },
   { id: 56, content: <SlideCollectorReceiver /> },
-  { id: 62, content: <SlideEdgeAgentFlow /> },
   { id: 57, content: <SlideCollectorProcessor/> },
   { id: 58, content: <SlideCollectorExporter/> },
+  // { id: 62, content: <SlideEdgeAgentFlow /> },
   { id: 59, content: <SlideCollectorConfigFile /> },
   { id: 60, content: <SlideCollectorAdvancedConfig /> },
 
   // 2) Foundations
   { id: 11, content: <Slide4b_Adoption /> },
-  { id: 12, content: <Slide5_TheBridge /> },
-  { id: 13, content: <Slide5a_Collector /> },
+  // { id: 12, content: <Slide5_TheBridge /> },
+  // { id: 13, content: <Slide5a_Collector /> },
 
   // 3) Platform choices and architecture
   { id: 15, content: <Slide6_MarketLandscape /> },
