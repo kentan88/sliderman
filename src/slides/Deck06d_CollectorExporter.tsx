@@ -37,12 +37,12 @@ const SlideCollectorExporter: React.FC = () => {
         </div>
       </div>
 
-      <div className="glass-card border-obs-white/10 p-5 flex items-center gap-3">
+      {/* <div className="glass-card border-obs-white/10 p-5 flex items-center gap-3">
         <Send className="h-5 w-5 text-obs-yellow shrink-0" />
         <p className="text-obs-white/85 text-lg">
           Migration pattern: dual-export first, compare dashboards/alerts, then decommission legacy pipelines.
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -6,12 +6,15 @@ import { Maximize2, Minimize2, Star } from 'lucide-react';
 import TitleSlide from './slides/Deck01_Title';
 import SlideAgenda from './slides/Deck02_Agenda';
 import SlideWhatIsObservability from './slides/Deck03_WhatIsObservability';
+import SlideBiggestPainPoints from './slides/Deck03a_BiggestPainPoints';
 import Slide1_WhyNow from './slides/Deck04_WhyNow';
+import SlideMonolithsToMicroservices from './slides/Deck04b_MonolithsToMicroservices';
 import SlidePainPointsBeforeAfter from './slides/Deck04a_PainPointsBeforeAfter';
 import Slide3_Evolution from './slides/Deck05_MonitoringVsObservability';
 import SlideRiseOfOpenTelemetry from './slides/Deck06_RiseOfOpenTelemetry';
 import SlideOpenTelemetryCollector from './slides/Deck06a_TheOpenTelemetryCollector';
 import SlideCollectorReceiver from './slides/Deck06a_SlideCollectorReceiver';
+import SlideEdgeAgentFlow from './slides/Deck06a_SlideEdgeAgentFlow';
 import SlideCollectorProcessor from './slides/Deck06a_SlideCollectorProcessor';
 import SlideCollectorExporter from './slides/Deck06a_SlideCollectorExporter';
 import SlideCollectorConfigFile from './slides/Deck06b_CollectorConfigFile';
@@ -45,12 +48,15 @@ const slides = [
   { id: 1, content: <TitleSlide /> },
   { id: 52, content: <SlideAgenda /> },
   { id: 53, content: <SlideWhatIsObservability /> },
+  { id: 63, content: <SlideBiggestPainPoints /> },
   { id: 7, content: <Slide3_Evolution /> },
   { id: 5, content: <Slide1_WhyNow /> },
+  { id: 61, content: <SlideMonolithsToMicroservices /> },
   { id: 6, content: <SlidePainPointsBeforeAfter /> },
   { id: 54, content: <SlideRiseOfOpenTelemetry /> },
   { id: 55, content: <SlideOpenTelemetryCollector /> },
   { id: 56, content: <SlideCollectorReceiver /> },
+  { id: 62, content: <SlideEdgeAgentFlow /> },
   { id: 57, content: <SlideCollectorProcessor/> },
   { id: 58, content: <SlideCollectorExporter/> },
   { id: 59, content: <SlideCollectorConfigFile /> },
@@ -88,6 +94,7 @@ const slides = [
 
 const STAGE_WIDTH = 1920;
 const STAGE_HEIGHT = 1080;
+const STAGE_OVERSCAN = 1.3;
 
 function App() {
   const getInitialSlide = () => {
@@ -122,10 +129,9 @@ function App() {
     [],
   );
 
-  const stageScale = Math.min(
-    viewportSize.width / STAGE_WIDTH,
-    viewportSize.height / STAGE_HEIGHT,
-  );
+  const stageScale =
+    Math.min(viewportSize.width / STAGE_WIDTH, viewportSize.height / STAGE_HEIGHT) *
+    STAGE_OVERSCAN;
 
   const paginate = useCallback((newDirection: number) => {
     const nextSlide = currentSlide + newDirection;

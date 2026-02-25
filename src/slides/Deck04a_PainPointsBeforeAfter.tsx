@@ -52,9 +52,9 @@ const SlidePainPointsBeforeAfter: React.FC = () => {
     <div className="w-full max-w-6xl space-y-8">
       <div className="text-center space-y-3">
         <h2 className="slide-title mb-0">The Pain Points and the Payoff</h2>
-        <p className="text-xl text-obs-white/75 max-w-4xl mx-auto">
+        {/* <p className="text-xl text-obs-white/75 max-w-4xl mx-auto">
           Moving from monitoring-only to observability changes incident response from guesswork to precision.
-        </p>
+        </p> */}
       </div>
 
       <div className="grid grid-cols-2 gap-6">
